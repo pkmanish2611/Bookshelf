@@ -1,0 +1,22 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkmanish2611/Bookshelf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkmanish2611/Bookshelf/issues"
+  },
+  "homepage": "https://github.com/pkmanish2611/Bookshelf#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0" 
+  }
+}
