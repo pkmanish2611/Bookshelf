@@ -10863,11 +10863,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar .container-fluid .collapse .navbar-nav .nav-item a, .navbar .container-sm .collapse .navbar-nav .nav-item a, .navbar .container-md .collapse .navbar-nav .nav-item a, .navbar .container-lg .collapse .navbar-nav .nav-item a, .navbar .container-xl .collapse .navbar-nav .nav-item a {
   font-weight: bold;
-<<<<<<< HEAD
   color: #fffefe;
-=======
-  color: white;
->>>>>>> 74e366ebf5e1a347d9ed07f14f81d3836c6cb485
   text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -10883,7 +10879,6 @@ a.text-dark:hover, a.text-dark:focus {
           box-sizing: border-box;
   border-radius: 40px;
 }
-<<<<<<< HEAD
 
 .container {
   -webkit-box-align: center;
@@ -10897,6 +10892,4 @@ a.text-dark:hover, a.text-dark:focus {
   margin: auto;
   margin-top: 20;
 }
-=======
->>>>>>> 74e366ebf5e1a347d9ed07f14f81d3836c6cb485
 /*# sourceMappingURL=Main.css.map */
