@@ -18,12 +18,21 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 
     <!-- Bootstrap Navigation bar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light  ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="component/images/library.png" alt="" width="50" height="50" class="d-inline-block align-text-bottom">
+=======
+    <!-- Bootstrap Navigation bar -->
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light  ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="library.png" alt="" width="50" height="50" class="d-inline-block align-text-bottom">
+>>>>>>> 74e366ebf5e1a347d9ed07f14f81d3836c6cb485
                 Bookshelf !
             </a>
             <!-- Bootstrap button toggler for responsiveness of header-->
