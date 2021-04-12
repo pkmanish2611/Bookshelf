@@ -4,6 +4,7 @@
 .body{
      font-family: Roboto;
      background-color: #fff;
+    
      
 }
 
@@ -26,7 +27,7 @@
                     .nav-item{
                         a{
                             font-weight: bold;
-                            color:white;
+                            color:rgb(255, 254, 254);
                             text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.10);
                         }
                         a:hover{
@@ -50,5 +51,23 @@
     box-sizing: border-box;
     border-radius: 40px;
 }
- 
+
+//index home page styling
+
+.container{ 
+    align-items: center;
+    margin-top: 50;
+    margin-bottom: 50;
+    .row{
+        .col-sm{ 
+            .card{
+                margin: auto;
+                margin-top: 20;
+            }
+        }
+        
+    }
+}
+
+
  

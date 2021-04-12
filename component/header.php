@@ -18,12 +18,12 @@
 </head>
 
 <body>
-    <!-- Bootstrap Navigation bar -->
 
+    <!-- Bootstrap Navigation bar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light  ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="library.png" alt="" width="50" height="50" class="d-inline-block align-text-bottom">
+                <img src="component/images/library.png" alt="" width="50" height="50" class="d-inline-block align-text-bottom">
                 Bookshelf !
             </a>
             <!-- Bootstrap button toggler for responsiveness of header-->
