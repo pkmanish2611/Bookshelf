@@ -1,0 +1,54 @@
+ 
+
+@import "node_modules/bootstrap/scss/bootstrap";
+.body{
+     font-family: Roboto;
+     background-color: #fff;
+     
+}
+
+.navbar{
+   background: rgba(77, 244, 174, 100);
+   box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.10);
+   .container-fluid{
+       .navbar-brand{
+            font-weight: bold;
+            color:white;
+            
+       }
+       .navbar-toggler{
+           background: rgba(77, 244, 174, 100);
+            
+       }
+            .collapse{
+                .navbar-nav{  
+                    list-style:none;
+                    .nav-item{
+                        a{
+                            font-weight: bold;
+                            color:white;
+                            text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.10);
+                        }
+                        a:hover{
+                        background: rgba(79, 168, 119, 100);
+                        }
+                    }
+            
+                }
+            }
+       
+   }    
+}
+ 
+
+ 
+ 
+.form-control{
+    width: 250px;
+    height: 35px; 
+    border: 2px solid #FFFEFE;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+ 
+ 
