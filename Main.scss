@@ -24,6 +24,16 @@
             .collapse{
                 .navbar-nav{  
                     list-style:none;
+                    .d-flex{
+                        .form-c{
+                            margin-top: 5;
+                            width: 250px;
+                            height: 35px; 
+                            border: 2px solid #FFFEFE;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                        }
+                    }
                     .nav-item{
                         a{
                             font-weight: bold;
@@ -44,13 +54,7 @@
 
  
  
-.form-control{
-    width: 250px;
-    height: 35px; 
-    border: 2px solid #FFFEFE;
-    box-sizing: border-box;
-    border-radius: 40px;
-}
+  
 
 //index home page styling
 
@@ -61,8 +65,17 @@
     .row{
         .col-sm{ 
             .card{
+                border-radius: 10px;
                 margin: auto;
                 margin-top: 20;
+                
+                .card-body{
+                     
+                    .btn{
+                        align-content: stretch;
+                        border-radius: 10px;
+                    }
+                }
             }
         }
         

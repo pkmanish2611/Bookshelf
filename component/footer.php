@@ -2,7 +2,7 @@
 
     <div class="text-center p-3" style="background-color: rgba(77, 244, 174, 0.89)">
         © 2020 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        <a class="text-dark" href="http://localhost/Bookshelf/">Bookshelf</a>
     </div>
 
 </footer>

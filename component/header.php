@@ -33,13 +33,13 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ml-auto">
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search here" aria-label="Search">
+                        <input class="form-control me-2 form-c" type="search" placeholder="Search here" aria-label="Search">
                     </form>
                     <li class="nav-item active">
-                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                        <a class="nav-link " aria-current="page" href="http://localhost/Bookshelf/">Home</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="#">Add Book</a>
+                        <a class="nav-link" href="http://localhost/Bookshelf/addbook.php">Add Book</a>
                     </li>
                 </ul>
             </div>

@@ -10861,6 +10861,16 @@ a.text-dark:hover, a.text-dark:focus {
   list-style: none;
 }
 
+.navbar .container-fluid .collapse .navbar-nav .d-flex .form-c, .navbar .container-sm .collapse .navbar-nav .d-flex .form-c, .navbar .container-md .collapse .navbar-nav .d-flex .form-c, .navbar .container-lg .collapse .navbar-nav .d-flex .form-c, .navbar .container-xl .collapse .navbar-nav .d-flex .form-c {
+  margin-top: 5;
+  width: 250px;
+  height: 35px;
+  border: 2px solid #FFFEFE;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+}
+
 .navbar .container-fluid .collapse .navbar-nav .nav-item a, .navbar .container-sm .collapse .navbar-nav .nav-item a, .navbar .container-md .collapse .navbar-nav .nav-item a, .navbar .container-lg .collapse .navbar-nav .nav-item a, .navbar .container-xl .collapse .navbar-nav .nav-item a {
   font-weight: bold;
   color: #fffefe;
@@ -10869,15 +10879,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar .container-fluid .collapse .navbar-nav .nav-item a:hover, .navbar .container-sm .collapse .navbar-nav .nav-item a:hover, .navbar .container-md .collapse .navbar-nav .nav-item a:hover, .navbar .container-lg .collapse .navbar-nav .nav-item a:hover, .navbar .container-xl .collapse .navbar-nav .nav-item a:hover {
   background: #4fa877;
-}
-
-.form-control {
-  width: 250px;
-  height: 35px;
-  border: 2px solid #FFFEFE;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 40px;
 }
 
 .container {
@@ -10889,7 +10890,14 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .container .row .col-sm .card {
+  border-radius: 10px;
   margin: auto;
   margin-top: 20;
+}
+
+.container .row .col-sm .card .card-body .btn {
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=Main.css.map */

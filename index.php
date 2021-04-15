@@ -5,6 +5,6 @@ require 'component/header.php';
 ?>
 <?php include 'component/content.php'; ?>
 
-
 <?php require 'component/footer.php'; ?>
+
  
