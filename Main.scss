@@ -1,9 +1,12 @@
- 
 
 @import "node_modules/bootstrap/scss/bootstrap";
+//header
 .body{
      font-family: Roboto;
      background-color: #fff;
+     display: flex;
+     align-items: center;
+     justify-content: center;
     
      
 }
@@ -31,7 +34,7 @@
                             height: 35px; 
                             border: 2px solid #FFFEFE;
                             box-sizing: border-box;
-                            border-radius: 10px;
+                            border-radius: 20px;
                         }
                     }
                     .nav-item{
@@ -56,31 +59,7 @@
  
   
 
-//index home page styling
-
-.container{ 
-    align-items: center;
-    margin-top: 50;
-    margin-bottom: 50;
-    .row{
-        .col-sm{ 
-            .card{
-                border-radius: 10px;
-                margin: auto;
-                margin-top: 20;
-                
-                .card-body{
-                     
-                    .btn{
-                        align-content: stretch;
-                        border-radius: 10px;
-                    }
-                }
-            }
-        }
-        
-    }
-}
+ 
 
 
  

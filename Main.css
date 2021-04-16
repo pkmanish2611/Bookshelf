@@ -10840,6 +10840,15 @@ a.text-dark:hover, a.text-dark:focus {
 .body {
   font-family: Roboto;
   background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .navbar {
@@ -10868,7 +10877,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: 2px solid #FFFEFE;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .navbar .container-fluid .collapse .navbar-nav .nav-item a, .navbar .container-sm .collapse .navbar-nav .nav-item a, .navbar .container-md .collapse .navbar-nav .nav-item a, .navbar .container-lg .collapse .navbar-nav .nav-item a, .navbar .container-xl .collapse .navbar-nav .nav-item a {
@@ -10879,25 +10888,5 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar .container-fluid .collapse .navbar-nav .nav-item a:hover, .navbar .container-sm .collapse .navbar-nav .nav-item a:hover, .navbar .container-md .collapse .navbar-nav .nav-item a:hover, .navbar .container-lg .collapse .navbar-nav .nav-item a:hover, .navbar .container-xl .collapse .navbar-nav .nav-item a:hover {
   background: #4fa877;
-}
-
-.container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 50;
-  margin-bottom: 50;
-}
-
-.container .row .col-sm .card {
-  border-radius: 10px;
-  margin: auto;
-  margin-top: 20;
-}
-
-.container .row .col-sm .card .card-body .btn {
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  border-radius: 10px;
 }
 /*# sourceMappingURL=Main.css.map */

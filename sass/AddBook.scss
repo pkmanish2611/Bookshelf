@@ -1,15 +1,17 @@
 //add-book screen styling
 
-.form-div{
+ 
     .add-container{
         background: #DAB4B4;
+        margin-top: 50; 
+        margin-bottom: 50;
         padding-top: 50;
         padding-bottom: 50; 
         .form-add{ 
-            .form-row{
+            .form-row{ 
                 .left-form{  
                     .img1{ 
-                        padding-left: 10%;  
+                        padding-left: 50%; 
                         .img-per{
                             border: 1px solid #000000;  
                             border-radius: 10px;
@@ -24,7 +26,7 @@
              
         }
     }
-}
+
 
 
 

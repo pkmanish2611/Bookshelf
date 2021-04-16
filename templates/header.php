@@ -1,3 +1,8 @@
+<?php
+ob_start();
+require 'db/connect.php';
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -10,11 +15,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-    <!-- concatenating the title of index to header it will look like this-- Bookshelf - home-->
     <title>Bookshelf - <?php echo $title ?></title>
-    <!--importing css-->
-    <link rel="stylesheet" href="main.css">
+
 </head>
 
 <body>
@@ -22,8 +24,8 @@
     <!-- Bootstrap Navigation bar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light  ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="component/images/library.png" alt="" width="50" height="50" class="d-inline-block align-text-bottom">
+            <a class="navbar-brand" href="http://localhost/Bookshelf/">
+                <img src="templates/logo/library.png" alt="" width="50" height="50" class="d-inline-block align-text-bottom">
                 Bookshelf !
             </a>
             <!-- Bootstrap button toggler for responsiveness of header-->
@@ -39,7 +41,7 @@
                         <a class="nav-link " aria-current="page" href="http://localhost/Bookshelf/">Home</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="http://localhost/Bookshelf/addbook.php">Add Book</a>
+                        <a class="nav-link" href="AddBook.php">Add Book</a>
                     </li>
                 </ul>
             </div>

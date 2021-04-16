@@ -1,0 +1,28 @@
+
+.container{ 
+    align-items: center;
+    margin-top: 50;
+    margin-bottom: 50;
+    .row{
+        .col-sm{ 
+            .card{
+                border-radius: 10px;
+                margin: auto;
+                margin-top: 20;
+                .img{
+                    height: 300;
+                    width:286;
+                }
+                
+                .card-body{
+                     
+                    .btn{
+                        align-content: stretch;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
