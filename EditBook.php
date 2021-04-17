@@ -1,12 +1,12 @@
  <link rel="stylesheet" href="sass/EditBook.css">
 
  <?php
-    $title = 'EditBook';
+    $title = 'AddBook';
     require 'templates/header.php';
     ?>
 
 
 
-<?php
+ <?php
     require 'templates/footer.php';
-?>
+    ?>

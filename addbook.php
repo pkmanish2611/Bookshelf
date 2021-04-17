@@ -2,7 +2,7 @@
 
  <?php
     $title = 'AddBook';
-    require 'templates/header.php';
+    include 'templates/header.php';
     ?>
 
 
@@ -10,8 +10,8 @@
      <form class="form-add" action="" method="POST">
          <div class="row row-col-1   justify-content-center form-row">
 
-             <div class="col-sm-5  left-form">
-                 <div class="form-group  img1">
+             <div class="col-sm-5 left-form">
+                 <div class="form-group   img1">
                      <!--previewing image before uploading-->
                      <img class="img-per" alt="Book image preview" id="preview">
                      <script src="js/preview.js"></script>
@@ -93,4 +93,6 @@
 
     ?>
 
- <?php require 'templates/footer.php'; ?>
+ <?php
+    include 'templates/footer.php';
+    ?>

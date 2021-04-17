@@ -1,7 +1,7 @@
  <link rel="stylesheet" href="sass/BookList.css">
 
  <?php
-    $title = 'Home';
+    $title = 'AddBook';
     require 'templates/header.php';
     ?>
 
@@ -38,4 +38,6 @@
      </div>
  </div>
 
- <?php require 'templates/footer.php'; ?>
+ <?php
+    require 'templates/footer.php';
+    ?>
