@@ -1,24 +1,10 @@
 .container{
-   background: #DAB4B4;
+   
     border-radius: 10px;
-    width: 100%;
-    height: auto;
-    margin-top: 50;
+    background: #DAB4B4;
+    margin-top: 50; 
     margin-bottom: 50;
-    padding-top: 50;
-    padding-bottom: 50;
-    .row{
-         
-        .img-preview{
-            background: cadetblueS;
-             .img4{
-                 
-                max-width: 100%; 
-                height: 100%;
-                border: 2px solid #000000;
-                box-sizing: border-box;
-                border-radius: 10px;
-             }
-        }
-    }
+    padding-top: 20;
+    padding-bottom: 20; 
+     
 }
