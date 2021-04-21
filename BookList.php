@@ -74,7 +74,7 @@
      <nav aria-label="Page navigation">
          <ul class="pagination justify-content-end pagination-sm">
              <li class="page-item  ">
-                 <a class="page-link <?= $page <= 1 ? 'disabled' : ''; ?> " href="index.php?page=<?= $previous; ?>">Previous</a>
+                 <a class="page-link <?= $page <= 1 ? 'disabled' : ''; ?> " href="index.php?page=<?= $previous; ?>"> &laquo; Previous</a>
              </li>
              <?php for ($i = 1; $i <= $pages; $i++) : ?>
                  <li class="page-item">
