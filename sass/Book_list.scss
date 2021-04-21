@@ -1,8 +1,9 @@
 
-.container{ 
+.my-con{ 
     align-items: center;
-    margin-top: 50;
+    margin-top:20;
     margin-bottom: 50;
+      
     .row{
         .col-sm{ 
             .card{
@@ -13,9 +14,7 @@
                     height: 300;
                     width:286;
                 }
-                
-                .card-body{
-                     
+                .card-body{ 
                     .btn{
                         align-content: stretch;
                         border-radius: 10px;
@@ -25,4 +24,9 @@
         }
         
     }
+     
 }
+a.disabled{
+        pointer-events: none;
+        cursor: default;
+    }

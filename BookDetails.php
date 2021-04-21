@@ -23,22 +23,24 @@ include 'templates/header.php';
                 <div class="card mb-3" style="max-width: 1500px;">
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center">
-                            <img class="img-fluid" src="uploads/<?php echo $row['bImage']; ?>" alt="Book image preview">
+                            <img class="img-fluid" style="height:500;" src="uploads/<?php echo $row['bImage']; ?>" alt="Book image preview">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $row['bName']; ?></h5>
-                                <h6 class="card-sub-title"><?php echo $row['bAuthor']; ?></h6>
+                                <h3 class="card-title"><?php echo $row['bName']; ?></h3>
+                                <h5 class="card-sub-title"><?php echo $row['bAuthor']; ?></h5>
                                 <p class="card-text"><?php echo $row['bDescription']; ?></p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="button" style="margin-right: 14px;" class="btn btn-outline-primary  ">Edit Details</button>
+                                <button type="button" class="btn btn-outline-danger  ">Delete Book</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-outline-primary  ">Edit Details</button>
-                    <button type="button" class="btn btn-outline-danger  ">Delete Book</button>
-                </div>
+
 
 </div>
 
