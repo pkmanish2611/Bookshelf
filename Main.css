@@ -10870,14 +10870,15 @@ a.text-dark:hover, a.text-dark:focus {
   list-style: none;
 }
 
-.navbar .container-fluid .collapse .navbar-nav .d-flex .form-c, .navbar .container-sm .collapse .navbar-nav .d-flex .form-c, .navbar .container-md .collapse .navbar-nav .d-flex .form-c, .navbar .container-lg .collapse .navbar-nav .d-flex .form-c, .navbar .container-xl .collapse .navbar-nav .d-flex .form-c {
-  margin-top: 5;
-  width: 250px;
-  height: 35px;
-  border: 2px solid #FFFEFE;
+.navbar .container-fluid .collapse .navbar-nav .d-flex .form_c, .navbar .container-sm .collapse .navbar-nav .d-flex .form_c, .navbar .container-md .collapse .navbar-nav .d-flex .form_c, .navbar .container-lg .collapse .navbar-nav .d-flex .form_c, .navbar .container-xl .collapse .navbar-nav .d-flex .form_c {
+  border: 1px solid #0a0a0a;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.navbar .container-fluid .collapse .navbar-nav .d-flex .btn1, .navbar .container-sm .collapse .navbar-nav .d-flex .btn1, .navbar .container-md .collapse .navbar-nav .d-flex .btn1, .navbar .container-lg .collapse .navbar-nav .d-flex .btn1, .navbar .container-xl .collapse .navbar-nav .d-flex .btn1 {
+  border-radius: 0px 15px 15px 0px;
 }
 
 .navbar .container-fluid .collapse .navbar-nav .nav-item a, .navbar .container-sm .collapse .navbar-nav .nav-item a, .navbar .container-md .collapse .navbar-nav .nav-item a, .navbar .container-lg .collapse .navbar-nav .nav-item a, .navbar .container-xl .collapse .navbar-nav .nav-item a {

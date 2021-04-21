@@ -27,10 +27,11 @@
              <h2 class="text-center">Book List</h2>
          </div>
      </div>
-
-     <!--bootstrap grid system-->
-     <!--row-col-* is used to define the number of column rendered in small screen-->
      <div class="row row-cols-1">
+
+         <!--bootstrap grid system-->
+         <!--row-col-* is used to define the number of column rendered in small screen-->
+
          <?php
             $limit = 5;
             $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -42,16 +43,13 @@
             //getting number of pages on the basis of limit
             $result1 = $connection->query("SELECT * FROM `bookshelf`");
             $book_count = mysqli_num_rows($result1);
-            $pages = ceil($book_count / $limit);
-
-            //setting previous and next 
+            $pages = ceil($book_count / $limit); 
             $previous = $page - 1;
             $next = $page + 1;
 
             if ($count > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
             ?>
-                 <script></script>
                  <div class="col-sm">
                      <!--bootstrap card for book listing-->
                      <div class="card " style="width: 18rem;">
@@ -69,25 +67,24 @@
                 echo "no record found";
             }
             ?>
-     </div>
-     <hr class="solid" style="border-top: 2px solid #bbb;">
-     <nav aria-label="Page navigation">
-         <ul class="pagination justify-content-end pagination-sm">
-             <li class="page-item  ">
-                 <a class="page-link <?= $page <= 1 ? 'disabled' : ''; ?> " href="index.php?page=<?= $previous; ?>"> &laquo; Previous</a>
-             </li>
-             <?php for ($i = 1; $i <= $pages; $i++) : ?>
-                 <li class="page-item">
-                     <a class="page-link" href="index.php?page=<?= $i; ?>"><?= $i ?></a>
+         <hr class="solid" style="border-top: 2px solid #bbb;">
+         <nav aria-label="Page navigation">
+             <ul class="pagination justify-content-end pagination-sm">
+                 <li class="page-item  ">
+                     <a class="page-link <?= $page <= 1 ? 'disabled' : ''; ?> " href="index.php?page=<?= $previous; ?>"> &laquo; Previous</a>
                  </li>
-             <?php endfor; ?>
-             <li class="page-item">
-                 <a class="page-link <?= $page >= $pages ? 'disabled' : ''; ?> " href="index.php?page=<?= $next; ?>">Next &raquo;</a>
-             </li>
-         </ul>
-     </nav>
- </div>
+                 <?php for ($i = 1; $i <= $pages; $i++) : ?>
+                     <li class="page-item">
+                         <a class="page-link" href="index.php?page=<?= $i; ?>"><?= $i ?></a>
+                     </li>
+                 <?php endfor; ?>
+                 <li class="page-item">
+                     <a class="page-link <?= $page >= $pages ? 'disabled' : ''; ?> " href="index.php?page=<?= $next; ?>">Next &raquo;</a>
+                 </li>
+             </ul>
+         </nav>
+     </div>
 
- <?php
-    require 'templates/footer.php';
-    ?>
+     <?php
+        require 'templates/footer.php';
+        ?>
