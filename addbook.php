@@ -1,5 +1,4 @@
- <link rel="stylesheet" href="sass/AddBook.css">
-
+ 
  <?php
     $title = 'AddBook';
     include 'templates/header.php';

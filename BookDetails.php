@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="sass/BookDetail.css">
+
 <?php
 $title = 'BookDetail';
 include 'templates/header.php';
 ?>
 
-<div class="container ">
+<div class="container container_b">
     <?php
 
     if (isset($_GET['id'])) {

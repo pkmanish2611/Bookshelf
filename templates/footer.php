@@ -6,7 +6,7 @@
     </div>
 
 </footer>
-</div>
+ 
  
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
