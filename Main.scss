@@ -1,4 +1,6 @@
-
+@use 'sass/AddBook.scss';
+@use 'sass/Book_list.scss';
+@use 'sass/BookDetail.scss';
 @import "node_modules/bootstrap/scss/bootstrap";
 //header
 .body{

@@ -12,7 +12,7 @@
              <h2 class="text-center">Add Book</h2>
          </div>
      </div>
-     <form class="form-add" action="BookDetails.php" method="POST" enctype="multipart/form-data">
+     <form class="form-add" action="" method="POST" enctype="multipart/form-data">
 
          <div class="row g-0 row-col-1   justify-content-center form-row">
 
