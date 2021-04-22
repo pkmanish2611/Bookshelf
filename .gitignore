@@ -1,3 +1,7 @@
-library.png
-sass/BookList.css.map
-new.php
+sass/AddBook.css
+sass/AddBook.css.map
+sass/Book_list.css
+sass/Book_list.css.map
+sass/BookDetail.css
+sass/BookDetail.css.map
+.gitignore
