@@ -1,4 +1,3 @@
-
 <?php
 $title = 'BookDetail';
 include 'templates/header.php';
@@ -34,8 +33,8 @@ include 'templates/header.php';
 
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="button" style="margin-right: 14px;" class="btn btn-outline-primary  ">Edit Details</button>
-                                <button type="button" class="btn btn-outline-danger" name="book_del">Delete Book</button>
+                                <button onclick="window.location.href='EditBook.php?id=<?php  echo $row['bId']; ?>'" style="margin-right: 14px;" class="btn btn-outline-primary  ">Edit Details</button>
+                                <button onclick="window.location.href='/page2'" class="btn btn-outline-danger" name="book_del">Delete Book</button>
                             </div>
                         </div>
                     </div>

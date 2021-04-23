@@ -1,6 +1,7 @@
 @use 'sass/AddBook.scss';
 @use 'sass/Book_list.scss';
 @use 'sass/BookDetail.scss';
+@use 'sass/EditBook.scss';
 @import "node_modules/bootstrap/scss/bootstrap";
 //header
 .body{
@@ -47,7 +48,7 @@
                              
                         }
                         a:hover{
-                        background: rgba(79, 168, 119, 100);
+                        background:rgb(206, 213, 214);
                         }
                     }
             

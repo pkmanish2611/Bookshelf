@@ -49,6 +49,23 @@ a.disabled {
   padding-bottom: 20;
 }
 
+.edit-container {
+  background: #DAB4B4;
+  margin-top: 50;
+  margin-bottom: 50;
+  padding-top: 20;
+  padding-bottom: 50;
+}
+.edit-container .form-edit .edit-row .left-img .img_edit {
+  padding-left: 12%;
+}
+.edit-container .form-edit .edit-row .left-img .img_edit .img_per {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  width: 250;
+  height: 350px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10013,7 +10030,7 @@ h3 {
   color: #fffefe;
 }
 .navbar .container-fluid .collapse .navbar-nav .nav-item a:hover, .navbar .container-sm .collapse .navbar-nav .nav-item a:hover, .navbar .container-md .collapse .navbar-nav .nav-item a:hover, .navbar .container-lg .collapse .navbar-nav .nav-item a:hover, .navbar .container-xl .collapse .navbar-nav .nav-item a:hover {
-  background: #4fa877;
+  background: #ced5d6;
 }
 
 /*# sourceMappingURL=main.css.map */

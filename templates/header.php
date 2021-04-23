@@ -37,7 +37,7 @@ require 'db/connect.php';
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ml-auto">
                     <form class="d-flex" method="post" action="">
-                        <input class="form-control form_c" type="search" placeholder="Search for Books/Authors..." aria-label="Search" name="search">
+                        <input class="form-control form_c" type="search" placeholder="Books/Authors..." aria-label="Search" name="search">
                         <button class="btn btn-outline-success btn1" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                     <li class="nav-item active">
