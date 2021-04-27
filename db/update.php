@@ -57,10 +57,12 @@
             $update_query = "UPDATE `bookshelf` SET `bName`=' $b_name',`bAuthor`=' $a_name',`bUrl`='$url',`bDescription`='$description',`bImage`='$img_file' WHERE `bID` = $id";
 
             $query_run = mysqli_query($connection, $update_query);
-            if ($query_run) {
-                echo '<script language = "javascript">';
-                echo 'alert("Book updated successfully");  location.href = "BookDetails.php?id=?><?php echo $id; ?><?php"';
-                echo '</script>';
+            if ($query_run) { ?>
+                <script type="text/javascript">
+	            alert("data Updated  Successfully!");
+	            window.location.href="/bookshelf/BookDetails.php?id=<?php echo $row['bId'] ?>";
+				</script>
+                <?php
             } else {
                 echo '<script language = "javascript">';
                 echo 'alert("Book not updated ");';

@@ -79,7 +79,7 @@
                 </div>
              </div>
              <div class="col-sm-8 submit-btn">
-                <input type="submit" href="BookDetails.php?id=<?php echo $id; ?>" class="btn btn-primary btn-sm btn-block" name="update" value="update">
+                <input type="submit" class="btn btn-primary btn-sm btn-block" name="update" value="update">
              </div>
           </div>
        </div>
