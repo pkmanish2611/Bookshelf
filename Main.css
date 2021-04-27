@@ -27,9 +27,8 @@
   margin-top: 20;
   border: 1px solid #000000;
 }
-.my-con .row .col-sm .card .img {
-  height: 300;
-  width: 286;
+.my-con .row .col-sm .card .img2 {
+  height: 250;
   border-radius: 10px 10px 0px 0px;
 }
 .my-con .row .col-sm .card .card-body .btn {

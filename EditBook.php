@@ -25,7 +25,7 @@
              </div>
           </div>
           <input type="hidden" name="bId" value="<?php echo $row['bId']; ?>">
-          <div class="col-md-7 right-form1">
+          <div class="col-md-6 right-form1">
              <div class="form-group row">
                 <label for="Name" class="col-sm-3 col-form-label">Book Name<span class="note" style="color: #ff0000;">*</span>:</label>
                 <div class="col-sm-7">
