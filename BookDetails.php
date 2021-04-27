@@ -20,7 +20,7 @@ include 'templates/header.php';
             <div class="col-md-8">
                 <div class="card-body">
                     <h3 class="card-title"><?php echo $b_name; ?></h3>
-                    <h5 class="card-sub-title"><?php echo $b_author; ?></h5>
+                    <h5 class="card-sub-title">By :<?php echo $b_author; ?></h5>
                     <a href="<?php $b_url ?>" class="text-decoration-none"><?php echo $b_url ?> </a>
 
                     <p class="card-text"><?php echo $b_description; ?></p>
