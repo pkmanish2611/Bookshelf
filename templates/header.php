@@ -18,6 +18,7 @@ require 'db/connect.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="main.css">
+
     <title>Bookshelf - <?php echo $title ?></title>
 
 
@@ -55,4 +56,5 @@ require 'db/connect.php';
                     </div>
                 </div>
             </nav>
+
         </header>
