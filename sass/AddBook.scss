@@ -1,11 +1,12 @@
 //add-book screen styling
 
- 
+  
     .add-container{
         background: #DAB4B4;
         margin-top: 50; 
         margin-bottom: 50;
         padding-top: 20;
+        border-radius: 10px;
         padding-bottom: 50; 
         .form-add{ 
             .form-row{ 
@@ -13,10 +14,12 @@
                     .img1{ 
                         padding-left: 12%; 
                         .img-per{
-                            border: 1px solid #000000;  
+                            border: 2px solid #000000;  
                             border-radius: 10px;
                             width: 250;
                             height: 350px;
+                            
+                             
                         }
                           
                     } 
@@ -26,6 +29,7 @@
              
         }
     }
+    
 
 
 

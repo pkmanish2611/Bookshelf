@@ -15,52 +15,8 @@
 
        <div class="row g-0 row-col-1   justify-content-center edit-row">
           <?php
-
-            $id = $_GET['id'];
-            $queryShow = "SELECT * FROM `bookshelf` WHERE bId = $id";
-            $query_run = mysqli_query($connection, $queryShow);
-
-            $row = mysqli_fetch_assoc($query_run);
-
-
-
-
-            if (isset($_POST['add'])) {
-               //$_post is php super global variable to collect form data after submitting an html form with method - "post"
-               $b_name = $_POST['b_name'];
-               $a_name = $_POST['a_name'];
-               $url = $_POST['url'];
-               $description = $_POST['description'];
-               $img_file = $_FILES['img_file']["name"];
-               $temp_name = $_FILES["img_file"]["tmp_name"];
-               $folder = "uploads/" . $img_file;
-               //insert query
-               $insert_query = "INSERT INTO `bookshelf`(`bName`, `bAuthor`, `bUrl`,`bDescription`, `bImage`) 
-             VALUES ('$b_name',' $a_name','$url' ,'$description','$img_file' )";
-
-               $query_run = mysqli_query($connection, $insert_query);
-               if (move_uploaded_file($temp_name, $folder)) {
+            include 'db/update.php';
             ?>
-                <script>
-                   alert("Book Edited successfully");
-                </script>
-             <?php
-               } else {
-               ?>
-                <script>
-                   alert("Can't edit this book");
-                </script>
-          <?php
-               }
-            }
-
-
-
-
-            ?>
-
-
-
           <div class="col-md-5 left-img">
              <div class="form-group   img_edit">
                 <!--previewing image before uploading-->
@@ -68,23 +24,40 @@
                 <script src="js/preview.js"></script>
              </div>
           </div>
-          <div class="col-md-5 right-form1">
+          <input type="hidden" name="bId" value="<?php echo $row['bId']; ?>">
+          <div class="col-md-7 right-form1">
              <div class="form-group row">
-                <label for="Name" class="col-sm-3 col-form-label">Book Name</label>
+                <label for="Name" class="col-sm-3 col-form-label">Book Name<span class="note" style="color: #ff0000;">*</span>:</label>
                 <div class="col-sm-7">
                    <input type="Text" class="form-control" placeholder="enter book name" name="b_name" value="<?php echo $row['bName']; ?>" required>
+                   <?php
+                     if (isset($error_msg['b_name'])) {
+                        echo "<small class='form-text text-danger'>" . $error_msg['b_name'] . "</small>";
+                     }
+                     ?>
                 </div>
              </div>
              <div class="form-group row">
-                <label for="Author Name" class="col-sm-3 col-form-label">Author Name</label>
+                <label for="Author Name" class="col-sm-3 col-form-label">Author Name<span class="note" style="color: #ff0000;">*</span>:</label>
                 <div class="col-sm-7">
                    <input type="Text" class="form-control" placeholder="enter Author name" name="a_name" value="<?php echo $row['bAuthor']; ?>" required>
+                   <?php
+                     if (isset($error_msg['a_name'])) {
+                        echo "<small class='form-text text-danger'>" . $error_msg['a_name'] . "</small>";
+                     }
+                     ?>
+
                 </div>
              </div>
              <div class="form-group row">
                 <label for="Url" class="col-sm-3 col-form-label">Book Url</label>
                 <div class="col-sm-7">
                    <input type="url" class="form-control" placeholder="book Url" value="<?php echo $row['bUrl']; ?>" name="url">
+                   <?php
+                     if (isset($error_msg['url'])) {
+                        echo "<small class='form-text text-danger'>" . $error_msg['url'] . "</small>";
+                     }
+                     ?>
                 </div>
              </div>
              <div class="form-group row">
@@ -94,14 +67,19 @@
                 </div>
              </div>
              <div class="form-group row">
-                <label for="Image" class="col-sm-3 col-form-label">Book Image</label>
+                <label for="Image" class="col-sm-3 col-form-label">Book Image<span class="note" style="color: #ff0000;">*</span>:</label>
                 <div class="col-sm-7">
                    <input type="file" class="form-control-file" id="file-input" value="<?php echo $row['bImage']; ?>" required name="img_file">
+                   <?php
+                     if (isset($error_msg['img_file'])) {
+                        echo "<small class='form-text text-danger'>" . $error_msg['img_file'] . "</small>";
+                     }
+                     ?>
                    <script src="js/preview.js"></script>
                 </div>
              </div>
              <div class="col-sm-8 submit-btn">
-                <button type="submit" class="btn btn-primary btn-sm btn-block" href="BookDetails.php?id=<?php echo $row['bId']; ?>" name="add">Add</button>
+                <input type="submit" href="BookDetails.php?id=<?php echo $id; ?>" class="btn btn-primary btn-sm btn-block" name="update" value="update">
              </div>
           </div>
        </div>

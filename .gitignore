@@ -5,3 +5,4 @@ sass/Book_list.css.map
 sass/BookDetail.css
 sass/BookDetail.css.map
 .gitignore
+db/crud.php

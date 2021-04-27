@@ -1,99 +1,90 @@
 <?php
-$title = 'BookList';
-require 'templates/header.php';
+if (isset($_GET['Sort'])) {
+    if ($_GET['Sort'] == 'A-Z') {
+        $a = "ORDER BY `bName` ASC";
+    } elseif ($_GET['Sort'] == 'Z-A') {
+        $a = "ORDER BY `bName` DESC";
+    } else {
+        $a = "ORDER BY bId";
+    }
+} else {
+    $a = "ORDER BY bId";
+}
+$limit = 6;
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+$offset = ($page - 1) * $limit;
+$results_per_page = 6;
+
+
+if (isset($_GET['search'])) {
+
+    $search_key =  mysqli_real_escape_string($connection, $_GET['search']);
+    $query =  "SELECT * FROM `bookshelf` WHERE `bName` LIKE '%$search_key%' OR `bAuthor` LIKE '%$search_key%' {$a} LIMIT {$offset} ,{$limit} ";
+
+    $result = mysqli_query($connection, $query);
+} else {
+    $query = "SELECT * FROM `bookshelf` {$a} LIMIT {$offset} ,{$limit} ";
+
+    $result = mysqli_query($connection, $query);
+}
 ?>
 
-
 <div class="container my-con">
-    <form method="GET" action="">
-        <div class="input-group input-group-sm  justify-content-end">
-            <label class="text" style="padding-right: 10;">Sort by:</label>
-            <div>
-                <select class="form-select form-select-sm" name="sort_book">
-                    <option value="">--select--</option>
-                    <option value="a-z" <?php if (isset($_GET['sort_book']) && $_GET['sort_book'] == "A-Z") {
-                                            echo "selected";
-                                        } ?>>Book A-Z</option>
-                    <option value="z-a" <?php if (isset($_GET['sort_book']) && $_GET['sort_book'] == "Z-A") {
-                                            echo "selected";
-                                        } ?>>Book Z-A</option>
-                </select>
-            </div>
-            <button type="submit" class="input-group-text btn-primary-sm">Go</button>
-        </div>
-    </form>
-
-
-    <hr class="solid" style="border-top: 2px solid #bbb;">
-
-
-     
-    <div class="row row-cols-1">
-
-        <!--bootstrap grid system-->
-        <!--row-col-* is used to define the number of column rendered in small screen-->
-
-        <?php
-        $limit = 5;
-        $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $start = ($page - 1) * $limit;
-        $sort_option = "";
-        if (isset($_GET['sort_book'])) {
-            if ($_GET['sort_book'] == "a-z") {
-                $sort_option = "ASC";
-            } else if ($_GET['sort_book'] == "z-a") {
-                $sort_option = "DESC";
+    <div class="d-flex justify-content-end">
+        <form action="index.php" method="GET" class="d-flex justify-content-end mx-md-10">
+            <?php if (isset($_GET['Sort'])) {
+                $sort = $_GET['Sort'];
+            } else {
+                $sort = " ";
             }
-            $query = "SELECT * FROM `bookshelf` order by `bName` $sort_option LIMIT $start, $limit";
-            $result = mysqli_query($connection, $query);
-            $count = mysqli_num_rows($result);
-
-            //getting number of pages on the basis of limit
-            $result1 = $connection->query("SELECT * FROM `bookshelf`");
-            $book_count = mysqli_num_rows($result1);
-            $pages = ceil($book_count / $limit);
-            $previous = $page - 1;
-            $next = $page + 1;
-        } else if (isset($_POST['search'])) {
-
-            $search_q = $_POST['search'];
-            $query = "SELECT * FROM `bookshelf` WHERE `bName`LIKE '%$search_q%' OR  `bAuthor` LIKE '%$search_q%' LIMIT $start, $limit";
-            $result = mysqli_query($connection, $query);
-            $count = mysqli_num_rows($result);
-        ?>
-            <h5>Showing result for : "<?php echo $search_q ?>" </h5>
-            <?php
-            //getting number of pages on the basis of limit for pagination
-            $result1 = $connection->query("SELECT * FROM `bookshelf` WHERE `bName`LIKE '%$search_q%' OR  `bAuthor` LIKE '%$search_q%'");
-            $book_count = mysqli_num_rows($result1);
-            $pages = ceil($book_count / $limit);
-            $previous = $page - 1;
-            $next = $page + 1;
-        } else {
-
-            $query = "SELECT * FROM `bookshelf` LIMIT $start, $limit";
-            $result = mysqli_query($connection, $query);
-            $count = mysqli_num_rows($result);
-
-
-            $result1 = $connection->query("SELECT * FROM `bookshelf`");
-            $book_count = mysqli_num_rows($result1);
-            $pages = ceil($book_count / $limit);
-            $previous = $page - 1;
-            $next = $page + 1;
-        }
-        ?>
-        <div class="row">
+            ?>
+            <select name="Sort" class=" form-select mt-4 w-100 w-md-25 mt-md-0" id="sort" onchange="javascript:this.form.submit()">
+                <option>Sort</option>
+                <option value="A-Z" <?php echo $sort == 'A-Z' ? "selected" : "" ?> id="1">A-Z</option>
+                <option value="Z-A" <?php echo $sort == 'Z-A' ? "selected" : "" ?> id="2">Z-A</option>
+            </select>
+        </form>
+    </div>
+    <hr class="solid" style="border-top: 2px solid #bbb;">
+    <div class="row">
         <div class="col-md-12">
             <h2 class="text-center">Book List</h2>
         </div>
-        </div>
+    </div>
+
+    <?php
+    if (isset($_GET['search'])) {
+        if (mysqli_num_rows($result) > 0) {
+    ?>
+            <div class="alert alert-warning alert-dismissible fade mt-5 show w-75 mx-auto d-flex justify-content-between" role="alert">
+                <strong>Showing result for "<?php echo $_GET['search']; ?>"</strong>
+                <button type="button" class="close bg-transparent border-0 ml-auto" data-dismiss="alert" aria-label="Close">
+                    <a href="index.php" class="text-dark" style="text-decoration: none;">
+                        <span aria-hidden="true"><i class="bi bi-x"></i></span>
+                    </a>
+                </button>
+            </div>
+        <?php } else { ?>
+            <div class="alert alert-warning alert-dismissible fade mt-5 show w-75 mx-auto d-flex justify-content-between" role="alert">
+                <strong>No match found ..!! Try again <i class="bi bi-arrow-counterclockwise"></i></strong>
+                <button type="button" class="close bg-transparent border-0 ml-auto" data-dismiss="alert" aria-label="Close">
+                    <a href="index.php" class="text-dark" style="text-decoration: none;">
+                        <span aria-hidden="true"><i class="bi bi-x"></i></span>
+                    </a>
+                </button>
+            </div>
+
+        <?php } ?>
+    <?php    } ?>
+
+    <div class="row row-cols-1">
         <?php
-
-
-        if ($count > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-            ?>
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) { ?>
                 <div class="col-sm">
                     <!--bootstrap card for book listing-->
                     <div class="card " style="width: 18rem;">
@@ -105,32 +96,73 @@ require 'templates/header.php';
                         </div>
                     </div>
                 </div>
-        <?php
-            }
+        <?php }
         } else {
-            echo "no record found";
+            //echo "No Matching Results";
         }
+        ?>
+
+        <?php
+        if (isset($_GET['Sort'])) {
+            $sort_variable = $_GET['Sort'] ? $_GET['Sort'] : ' ';
+        } else {
+            $sort_variable = "";
+        }
+
+        if (isset($_GET['search'])) {
+            $search =  mysqli_real_escape_string($connection, $_GET['search']);
+            $search_variable = $_GET['search'] ? $_GET['search'] : ' ';
+            $sql1 = "SELECT * FROM `bookshelf` WHERE `bName` LIKE '%$search%' OR `bAuthor` LIKE '%$search%'  ";
+            $pagination_result = mysqli_query($connection, $sql1);
+        } else {
+            $sql1 = " SELECT * FROM `bookshelf` ";
+            $pagination_result = mysqli_query($connection, $sql1) or die("query error");
+        }
+
         ?>
     </div>
 
-    <hr class="solid" style="border-top: 2px solid #bbb;">
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-end pagination-sm">
-            <li class="page-item  ">
-                <a class="page-link <?= $page <= 1 ? 'disabled' : ''; ?> " href="index.php?page=<?= $previous; ?>"> &laquo; Previous</a>
-            </li>
-            <?php for ($i = 1; $i <= $pages; $i++) : ?>
-                <li class="page-item <?= $page == $i ? 'active' : ''; ?>">
-                    <a class="page-link" href="index.php?page=<?= $i; ?>"><?= $i ?></a>
-                </li>
-            <?php endfor; ?>
-            <li class="page-item">
-                <a class="page-link <?= $page >= $pages ? 'disabled' : ''; ?> " href="index.php?page=<?= $next; ?>">Next &raquo;</a>
-            </li>
-        </ul>
-    </nav>
+    <div style="padding-top: 20;">
+        <?php
 
+        if (mysqli_num_rows($pagination_result) > 0) {
+            $total_record = mysqli_num_rows($pagination_result);
+            $total_page = ceil($total_record / $limit);
+            echo '<nav aria-label="Page navigation example">';
+            echo '<ul class="pagination pagination-sm justify-content-end">';
+
+            if (isset($search)) {
+                $search_variable = $_GET['search'] ? $_GET['search'] : ' ';
+
+                echo '<li class="page-item"><a class="page-link" href="index.php?search=' . $search_variable . '&page=' . ($page - 1) . '">Prev</a></li>';
+            } else {
+                echo '<li class="page-item"><a  class="page-link" href="index.php?Sort=' . $sort_variable . '&page=' . ($page - 1) . '">Prev</a></li>';
+            }
+            for ($i = 1; $i <= $total_page; $i++) {
+
+                if (isset($_GET['Sort'])) {
+                    $sort_variable = $_GET['Sort'] ? $_GET['Sort'] : ' ';
+                }
+                if (isset($search)) {
+                    $search_variable = $_GET['search'] ? $_GET['search'] : ' ';
+
+                    echo '<li class="page-item"><a class="page-link" href="index.php?search=' . $search_variable . '&page=' . $i . '">' . $i . '</a></li>';
+                } else {
+                    echo '<li class="page-item"><a class="page-link" href="index.php?Sort=' . $sort_variable . '&page=' . $i . '">' . $i . '</a></a>';
+                }
+            }
+            if (isset($search)) {
+                $search_variable = $_GET['search'] ? $_GET['search'] : ' ';
+
+                echo '<li class="page-item"><a class="page-link" href="index.php?search=' . $search_variable . '&page=' . ($page + 1) . '">Next</a></li>';
+            } else {
+                echo '<li class="page-item"><a class="page-link" href="index.php?Sort=' . $sort_variable . '&page=' . ($page + 1) . '">Next</a></li>';
+            }
+
+            echo '</ul>';
+            echo '</nav>';
+        }
+        ?>
+
+    </div>
 </div>
-<?php
-require 'templates/footer.php';
-?>

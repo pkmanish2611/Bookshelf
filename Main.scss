@@ -1,12 +1,12 @@
-@use 'sass/AddBook.scss';
-@use 'sass/Book_list.scss';
-@use 'sass/BookDetail.scss';
-@use 'sass/EditBook.scss';
+@import 'sass/AddBook.scss';
+@import 'sass/Book_list.scss';
+@import 'sass/BookDetail.scss';
+@import 'sass/EditBook.scss';
 @import "node_modules/bootstrap/scss/bootstrap";
 //header
 .body{
      font-family: Roboto;
-     background-color: #fff;
+     background-color: rgb(252, 250, 250);
      display: flex;
      align-items: center;
      justify-content: center;
@@ -40,7 +40,12 @@
                              
                             border-radius: 0px 15px 15px 0px;
                         }
+                        
                     }
+                     .btn2{
+                            height: 50px;
+                            border-radius: 10px;
+                        }
                     .nav-item{
                         a{
                             font-weight: bold;

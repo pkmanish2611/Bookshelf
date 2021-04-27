@@ -4,13 +4,14 @@
   margin-top: 50;
   margin-bottom: 50;
   padding-top: 20;
+  border-radius: 10px;
   padding-bottom: 50;
 }
 .add-container .form-add .form-row .left-form .img1 {
   padding-left: 12%;
 }
 .add-container .form-add .form-row .left-form .img1 .img-per {
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   border-radius: 10px;
   width: 250;
   height: 350px;
@@ -19,16 +20,17 @@
 .my-con {
   align-items: center;
   margin-top: 20;
-  margin-bottom: 50;
 }
 .my-con .row .col-sm .card {
   border-radius: 10px;
   margin: auto;
   margin-top: 20;
+  border: 1px solid #000000;
 }
 .my-con .row .col-sm .card .img {
   height: 300;
   width: 286;
+  border-radius: 10px 10px 0px 0px;
 }
 .my-con .row .col-sm .card .card-body .btn {
   align-content: stretch;
@@ -55,6 +57,7 @@ a.disabled {
   margin-bottom: 50;
   padding-top: 20;
   padding-bottom: 50;
+  border-radius: 10px;
 }
 .edit-container .form-edit .edit-row .left-img .img_edit {
   padding-left: 12%;
@@ -9997,7 +10000,7 @@ h3 {
 }
 .body {
   font-family: Roboto;
-  background-color: #fff;
+  background-color: #fcfafa;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10024,6 +10027,10 @@ h3 {
 }
 .navbar .container-fluid .collapse .navbar-nav .d-flex .btn1, .navbar .container-sm .collapse .navbar-nav .d-flex .btn1, .navbar .container-md .collapse .navbar-nav .d-flex .btn1, .navbar .container-lg .collapse .navbar-nav .d-flex .btn1, .navbar .container-xl .collapse .navbar-nav .d-flex .btn1 {
   border-radius: 0px 15px 15px 0px;
+}
+.navbar .container-fluid .collapse .navbar-nav .btn2, .navbar .container-sm .collapse .navbar-nav .btn2, .navbar .container-md .collapse .navbar-nav .btn2, .navbar .container-lg .collapse .navbar-nav .btn2, .navbar .container-xl .collapse .navbar-nav .btn2 {
+  height: 50px;
+  border-radius: 10px;
 }
 .navbar .container-fluid .collapse .navbar-nav .nav-item a, .navbar .container-sm .collapse .navbar-nav .nav-item a, .navbar .container-md .collapse .navbar-nav .nav-item a, .navbar .container-lg .collapse .navbar-nav .nav-item a, .navbar .container-xl .collapse .navbar-nav .nav-item a {
   font-weight: bold;
