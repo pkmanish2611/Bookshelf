@@ -10000,7 +10000,11 @@ h3 {
 }
 .body {
   font-family: Roboto;
+<<<<<<< HEAD
   background-color: #fcfafa;
+=======
+  background-color: #fff;
+>>>>>>> db7a626f081ec93bd97b29c2cc3cf165cd928246
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10028,10 +10032,13 @@ h3 {
 .navbar .container-fluid .collapse .navbar-nav .d-flex .btn1, .navbar .container-sm .collapse .navbar-nav .d-flex .btn1, .navbar .container-md .collapse .navbar-nav .d-flex .btn1, .navbar .container-lg .collapse .navbar-nav .d-flex .btn1, .navbar .container-xl .collapse .navbar-nav .d-flex .btn1 {
   border-radius: 0px 15px 15px 0px;
 }
+<<<<<<< HEAD
 .navbar .container-fluid .collapse .navbar-nav .btn2, .navbar .container-sm .collapse .navbar-nav .btn2, .navbar .container-md .collapse .navbar-nav .btn2, .navbar .container-lg .collapse .navbar-nav .btn2, .navbar .container-xl .collapse .navbar-nav .btn2 {
   height: 50px;
   border-radius: 10px;
 }
+=======
+>>>>>>> db7a626f081ec93bd97b29c2cc3cf165cd928246
 .navbar .container-fluid .collapse .navbar-nav .nav-item a, .navbar .container-sm .collapse .navbar-nav .nav-item a, .navbar .container-md .collapse .navbar-nav .nav-item a, .navbar .container-lg .collapse .navbar-nav .nav-item a, .navbar .container-xl .collapse .navbar-nav .nav-item a {
   font-weight: bold;
   color: #fffefe;
