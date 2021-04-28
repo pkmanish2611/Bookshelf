@@ -1,7 +1,7 @@
 <?php
 
 
-if (isset($_GET["id"]) && !empty(trim($_GET["id"])) or isset($_POST["bID"])) {
+if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     require_once "connect.php";
     $sql = "SELECT * FROM `bookshelf` WHERE  bId = ?";
 

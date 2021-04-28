@@ -10,14 +10,14 @@ if (isset($_GET['Sort'])) {
 } else {
     $a = "ORDER BY bId";
 }
-$limit = 6;
+$limit = 8;
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
 } else {
     $page = 1;
 }
 $offset = ($page - 1) * $limit;
-$results_per_page = 6;
+$results_per_page = 8;
 
 
 if (isset($_GET['search'])) {
