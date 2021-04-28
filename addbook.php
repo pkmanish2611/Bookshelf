@@ -50,26 +50,26 @@
                      </div>
                  </div>
                  <div class="form-group row">
-                     <label for="Url" class="col-sm-3 col-form-label">Book Url</label>
+                     <label for="Url" class="col-sm-3 col-form-label">Book Url :</label>
                      <div class="col-sm-7">
                          <input type="url" class="form-control" placeholder="book Url" name="url">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="description" class="col-sm-3 col-form-label">Book Description :</label>
+                     <div class="col-sm-7">
+                         <textarea class="form-control" id="Textarea1" rows="4" name="description" maxlength="500"></textarea>
                          <?php
-                            if (isset($error_msg['url'])) {
-                                echo "<small class='form-text text-danger'>" . $error_msg['url'] . "</small>";
+                            if (isset($error_msg['description'])) {
+                                echo "<small class='form-text text-danger'>" . $error_msg['description'] . "</small>";
                             }
                             ?>
                      </div>
                  </div>
                  <div class="form-group row">
-                     <label for="description" class="col-sm-3 col-form-label">Book Description</label>
+                     <label for="Image" class="col-sm-3 col-form-label">Book Image :</label>
                      <div class="col-sm-7">
-                         <textarea class="form-control" id="Textarea1" rows="4" name="description"></textarea>
-                     </div>
-                 </div>
-                 <div class="form-group row">
-                     <label for="Image" class="col-sm-3 col-form-label">Book Image<span class="note" style="color: #ff0000;">*</span>:</label>
-                     <div class="col-sm-7">
-                         <input type="file" class="form-control-file" id="file-input" value="" name="img_file" require>
+                         <input type="file" class="form-control-file" id="file-input" value="" name="img_file">
                          <?php
                             if (isset($error_msg['img_file'])) {
                                 echo "<small class='form-text text-danger'>" . $error_msg['img_file'] . "</small>";

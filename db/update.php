@@ -13,49 +13,55 @@
         $b_name = "";
         $a_name = "";
         $url = $_POST['url'];
-        $description = $_POST['description'];
-        $img_file = $_FILES['img_file']['name'];
+        $description = "";
+        $img_file = "";
+
 
         $valid = true;
         $name = $_POST['b_name'];
         if (empty($name)) {
             $error_msg['b_name'] = "Name is required";
             $valid = false;
-        } else if (!preg_match("/^[a-zA-Z -]*$/", $name)) {
-            $error_msg['b_name'] = "Only letters allowed";
-            $valid = false;
-        } else {
-            $b_name = $_POST['b_name'];
+        }else {
+            $b_name = mysqli_real_escape_string($connection, $_POST['a_name']);
         }
 
         $aName = $_POST['a_name'];
         if (empty($aName)) {
             $error_msg['a_name'] = "Author name is required";
             $valid = false;
-        } else if (!preg_match("/^[a-zA-Z -]*$/", $aName)) {
-            $error_msg['a_name'] = "Only letters allowed";
-            $valid = false;
         } else {
-            $a_name = $_POST['a_name'];
+            $a_name = mysqli_real_escape_string($connection, $_POST['a_name']);
+        }
+
+        $bDescription = nl2br($_POST['description']);
+        if (strlen($bDescription) > 500) {
+            $error_msg['description'] = "Max character allowed is 500";
+        } else {
+            $description = nl2br($_POST['description']);
         }
 
 
 
         if ($_FILES['img_file']['name']) {
             if (($_FILES['img_file']['size'] <= (1024 * 1024)) and (($_FILES['img_file']['type'] == "image/jpeg") or ($_FILES['img_file']['type'] == "image/png"))) {
-                move_uploaded_file($_FILES['img_file']['tmp_name'], "uploads/"  . time() . rand() . "-" . $_FILES['img_file']['name']);
+                move_uploaded_file($_FILES['img_file']['tmp_name'], "uploads/". $_FILES['img_file']['name']);
+                $img_file = $_FILES['img_file']['name'];
             } else {
                 $error_msg['img_file'] = "Please upload image in jpg/png format and max 1 mb";
                 $valid = false;
             }
         } else {
-            $error_msg['img_file'] = "Image is required";
-            $valid = false;
+             
+            $valid = true;
         }
 
         if ($valid) {
-            $update_query = "UPDATE `bookshelf` SET `bName`=' $b_name',`bAuthor`=' $a_name',`bUrl`='$url',`bDescription`='$description',`bImage`='$img_file' WHERE `bID` = $id";
-
+            if ($_FILES['img_file']['name']) {
+                $update_query = "UPDATE `bookshelf` SET `bName`=' $b_name',`bAuthor`=' $a_name',`bUrl`='$url',`bDescription`='$description',`bImage`='$img_file' WHERE `bID` = $id";
+            } else {
+                $update_query = "UPDATE `bookshelf` SET `bName`=' $b_name',`bAuthor`=' $a_name',`bUrl`='$url',`bDescription`='$description'  WHERE `bID` = $id";
+            }
             $query_run = mysqli_query($connection, $update_query);
             if ($query_run) { ?>
                 <script type="text/javascript">

@@ -8,7 +8,7 @@
  <div class="container edit-container">
     <div class="row">
        <div class="col-md-12">
-          <h2 class="text-center">Add Book</h2>
+          <h2 class="text-center">Edit Book</h2>
        </div>
     </div>
     <form class="form-edit" action="" method="POST" enctype="multipart/form-data">
@@ -50,26 +50,21 @@
                 </div>
              </div>
              <div class="form-group row">
-                <label for="Url" class="col-sm-3 col-form-label">Book Url</label>
+                <label for="Url" class="col-sm-3 col-form-label">Book Url :</label>
                 <div class="col-sm-7">
                    <input type="url" class="form-control" placeholder="book Url" value="<?php echo $row['bUrl']; ?>" name="url">
-                   <?php
-                     if (isset($error_msg['url'])) {
-                        echo "<small class='form-text text-danger'>" . $error_msg['url'] . "</small>";
-                     }
-                     ?>
                 </div>
              </div>
              <div class="form-group row">
-                <label for="description" class="col-sm-3 col-form-label">Book Description</label>
+                <label for="description" class="col-sm-3 col-form-label">Book Description :</label>
                 <div class="col-sm-7">
-                   <textarea class="form-control" id="Textarea1" rows="4" name="description"></textarea>
+                   <textarea class="form-control" id="Textarea1" rows="4" name="description"><?php echo $row['bDescription']; ?></textarea>
                 </div>
              </div>
              <div class="form-group row">
-                <label for="Image" class="col-sm-3 col-form-label">Book Image<span class="note" style="color: #ff0000;">*</span>:</label>
+                <label for="Image" class="col-sm-3 col-form-label">Book Image :</label>
                 <div class="col-sm-7">
-                   <input type="file" class="form-control-file" id="file-input" value="<?php echo $row['bImage']; ?>" required name="img_file">
+                   <input type="file" class="form-control-file" id="file-input" value="<?php echo $row['bImage']; ?>" name="img_file">
                    <?php
                      if (isset($error_msg['img_file'])) {
                         echo "<small class='form-text text-danger'>" . $error_msg['img_file'] . "</small>";

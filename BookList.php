@@ -5,10 +5,10 @@ if (isset($_GET['Sort'])) {
     } elseif ($_GET['Sort'] == 'Z-A') {
         $a = "ORDER BY `bName` DESC";
     } else {
-        $a = "ORDER BY bId";
+        $a = "ORDER BY `bId`";
     }
 } else {
-    $a = "ORDER BY bId";
+    $a = "ORDER BY `bId`";
 }
 $limit = 8;
 if (isset($_GET['page'])) {
@@ -24,11 +24,13 @@ if (isset($_GET['search'])) {
 
     $search_key =  mysqli_real_escape_string($connection, $_GET['search']);
     $query =  "SELECT * FROM `bookshelf` WHERE `bName` LIKE '%$search_key%' OR `bAuthor` LIKE '%$search_key%' {$a} LIMIT {$offset} ,{$limit} ";
-
     $result = mysqli_query($connection, $query);
+    //getting total search result !!
+    $total_query = "SELECT * FROM `bookshelf` WHERE `bName` LIKE '%$search_key%' OR `bAuthor` LIKE '%$search_key%'";
+    $total_result = mysqli_query($connection, $total_query);
+    $total_book = mysqli_num_rows($total_result);
 } else {
-    $query = "SELECT * FROM `bookshelf` {$a} LIMIT {$offset} ,{$limit} ";
-
+    $query = "SELECT * FROM `bookshelf` {$a} LIMIT {$offset} ,{$limit} "; 
     $result = mysqli_query($connection, $query);
 }
 ?>
@@ -50,18 +52,14 @@ if (isset($_GET['search'])) {
         </form>
     </div>
     <hr class="solid" style="border-top: 2px solid #bbb;">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="text-center">Book List</h2>
-        </div>
-    </div>
 
     <?php
     if (isset($_GET['search'])) {
+        $n_row = mysqli_num_rows($result);
         if (mysqli_num_rows($result) > 0) {
     ?>
             <div class="alert alert-warning alert-dismissible fade mt-5 show w-75 mx-auto d-flex justify-content-between" role="alert">
-                <strong>Showing result for "<?php echo $_GET['search']; ?>"</strong>
+                <strong>Showing '<?php echo $n_row; ?>' of '<?php echo $total_book; ?>' result for "<?php echo $_GET['search']; ?>"</strong>
                 <button type="button" class="close bg-transparent border-0 ml-auto" data-dismiss="alert" aria-label="Close">
                     <a href="index.php" class="text-dark" style="text-decoration: none;">
                         <span aria-hidden="true"><i class="bi bi-x"></i></span>
