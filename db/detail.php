@@ -18,7 +18,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 $b_name = $row['bName'];
                 $b_author = $row['bAuthor'];
                 $b_url = $row['bUrl'];
-                $b_description = $row['bDescription'];
+                $b_description = nl2br($row['bDescription']);
             } else {
                 header("location: error.php");
                 exit();
@@ -41,7 +41,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 $b_name = $row['bName'];
                 $b_author = $row['bAuthor'];
                 $b_url = $row['bUrl'];
-                $b_description = $row['bDescription'];
+                $b_description = nl2br($row['bDescription']);
             }
              
             mysqli_free_result($result);

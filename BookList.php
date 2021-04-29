@@ -30,7 +30,7 @@ if (isset($_GET['search'])) {
     $total_result = mysqli_query($connection, $total_query);
     $total_book = mysqli_num_rows($total_result);
 } else {
-    $query = "SELECT * FROM `bookshelf` {$a} LIMIT {$offset} ,{$limit} "; 
+    $query = "SELECT * FROM `bookshelf` {$a} LIMIT {$offset} ,{$limit} ";
     $result = mysqli_query($connection, $query);
 }
 ?>
@@ -85,18 +85,18 @@ if (isset($_GET['search'])) {
             while ($row = mysqli_fetch_assoc($result)) { ?>
                 <div class="col-sm">
                     <!--bootstrap card for book listing-->
-                    <div class="card " style="width: 15rem;">
+                    <div class="card text-center " style="width: 15rem;">
                         <img class="card-img-top img2" src="uploads/<?php echo $row['bImage']; ?>" alt="Book image">
                         <div class="card-body">
                             <h6 class="card-title"><?php echo $row['bName']; ?></h6>
-                            <h7 class="card-subtitle mb-2 text-muted">By: <?php echo $row['bAuthor']; ?></h7>
+                            <h7 class="card-subtitle text-muted">By: <?php echo $row['bAuthor']; ?></h7>
                             <a href="BookDetails.php?id=<?php echo $row['bId']; ?>" class="btn btn-success btn-sm btn-block">View details</a>
                         </div>
                     </div>
                 </div>
         <?php }
         } else {
-            //echo "No Matching Results";
+            echo "No Matching Results";
         }
         ?>
 

@@ -31,15 +31,20 @@
         if (strlen($bDescription) > 500){
             $error_msg['description'] = "Max character allowed is 500";
         }else{
-            $description = nl2br($_POST['description']);
+            $description =  mysqli_real_escape_string($connection, $_POST['description']);
         }
 
-        if (($_FILES['img_file']['size'] <= (1024 * 1024)) and (($_FILES['img_file']['type'] == "image/jpeg") or ($_FILES['img_file']['type'] == "image/png"))) {
-            move_uploaded_file($_FILES['img_file']['tmp_name'], "uploads/" . $_FILES['img_file']['name']);
-            $img_file = $_FILES['img_file']['name'];
+        if ($_FILES['img_file']['name']) {
+            if (($_FILES['img_file']['size'] <= (1024 * 1024)) and (($_FILES['img_file']['type'] == "image/jpeg") or ($_FILES['img_file']['type'] == "image/png"))) {
+                move_uploaded_file($_FILES['img_file']['tmp_name'], "uploads/" . $_FILES['img_file']['name']);
+                $img_file = $_FILES['img_file']['name'];
+            } else {
+                $error_msg['img_file'] = "Please upload image in jpg/png format and max 1 mb";
+                $valid = false;
+            }
         } else {
-            $error_msg['img_file'] = "Please upload image in jpg/png format and max 1 mb";
-            $valid = false;
+
+            $valid = true;
         }
 
 

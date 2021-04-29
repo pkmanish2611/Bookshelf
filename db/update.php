@@ -38,7 +38,7 @@
         if (strlen($bDescription) > 500) {
             $error_msg['description'] = "Max character allowed is 500";
         } else {
-            $description = nl2br($_POST['description']);
+            $description =  mysqli_real_escape_string($connection, $_POST['description']);
         }
 
 

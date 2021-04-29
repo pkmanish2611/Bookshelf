@@ -12,7 +12,7 @@ include 'templates/header.php';
             <h2 class="text-center">Book Details</h2>
         </div>
     </div>
-    <div class="card mb-3" style="max-width: 1500px;">
+    <div class="card text-center mb-3" style="max-width: 1500px;">
         <div class="row g-0">
             <div class="col-md-4 d-flex justify-content-center">
                 <img class="img-fluid" style="height:500;" src="uploads/<?php echo $b_image; ?>" alt="Book image preview">
